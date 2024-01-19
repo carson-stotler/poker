@@ -1,13 +1,8 @@
-# CSE264 Project 4: Making a Blackjack 21 Game using HTML/CSS/DOM
-## Due: Mon Nov 27 2023 at 11:59 PM
+# Making a Blackjack 21 Game using HTML/CSS/DOM
 
 ## Carson Stotler
-## Video Link -->
-### https://drive.google.com/file/d/1tlMGxLHzjl2GIs5Bhq2LRApk_lwc9G4C/view?usp=sharing
 
-In this assignment, you will use HTML, CSS, and JavaScript on the Frontend to create a playable blackjack 21 game. You will also record win and losses to a MongoDB to be displayed on the frontend.
-
-All the code and packages you need is in this GitHub Classroom repo. Do not install any other packages (unless given permission by the instructor)
+In this project, you will use HTML, CSS, and JavaScript on the Frontend to create a playable blackjack 21 game. You will also record win and losses to a MongoDB to be displayed on the frontend.
 
 ### REST API for Cards
 You will use the [Deck of Card API](http://deckofcardsapi.com/) as a way to create a Deck of Cards, take cards out of that deck, and manage the hands of the player and the dealer. It is a very simple API that provides images of cards, values, creating hands and decks, etc. The listed webpage has all the details on using the API. 
@@ -96,14 +91,5 @@ Then store your MongoDB URI connection in your  `.env` file.
 - Note that after some of the steps in the Atlas UI, you may see a banner stating `We are deploying your changes`.  You will need to wait for the deployment to finish before using the DB in your application.
 
 
-
-### Grading
-* **70 Points** - Game plays correctly (with correct scores, win and loss states, etc)
-* **10 Points - Create a 5-minute video and include a link to it in this README that covers and explains how your code works. 
-* **15 Points** - Correctly records each round of the game in MongoDB and update score tally.
-* **5 Points** -  Code is well commented and easy to read/follow.
-* **BONUS 10 Points** - add animations to show cards moving from deck to player/dealer hands, animations to flip the card, 1 second delays on cards moving/flipping/updating
-
-* If code doesn't run/compile you can get no more than a 65, although this score can be much lower. But please write comments and a README to explain what you were trying to do. 
 
 
