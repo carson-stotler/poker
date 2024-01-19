@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Blackjack 21</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
+        <link href="/stylesheets/style.css" rel="stylesheet">
+        <script src="/javascripts/main.js"></script>
+        <script src="https://kit.fontawesome.com/369988c0b9.js" crossorigin="anonymous"></script> <!-- For my icons -->
+    </head>
+
+    <body>
+        <!-- https://fontawesome.com/search?q=money&o=r&m=free -->
+        <!-- Main Modal pop up to begin entire game -->
+        <div id="myModal" class="modal hidden">
+            <div class="modal-content">
+                <i class="fa-solid fa-money-bill-wave" style="font-size: 4em;"></i>
+            </div>
+            <div class="modal-content">
+                <h1>Would you like to play Blackjack?</h1>
+            </div>
+            <div>
+                <button id="firstDeal" class="dealButton">Deal</button>
+            </div>
+        </div>
+        <div id="overlay" class="overlay hidden"></div>
+
+        <!-- Modal Pop Up when you Win -- asks to replay -->
+        <div id="winningModal" class="modal later hidden">
+            <div class="modal-content">
+                <i class="fa-solid fa-trophy icon" style="font-size: 4em;"></i>            
+            </div>
+            <div class="modal-content">
+                <h1><em>Good Job!</em><br>
+                    Would you like to play again?</h1>
+            </div>
+            <div>
+                <button id="winDealBtn" class="dealButton">Deal</button>
+            </div>
+        </div>
+
+        <!-- Modal Pop Up when you Lose -- asks to replay -->
+        <div id="losingModal" class="modal later hidden">
+            <div class="modal-content">
+                <i class="fa-solid fa-thumbs-down icon" style="font-size: 4em;"></i>            
+            </div>
+            <div class="modal-content">
+                <h1><em>Good Try!</em><br>
+                    Would you like to play again?</h1>
+            </div>
+            <div>
+                <button id="loseDealBtn" class="dealButton">Deal</button>
+            </div>
+        </div>
+
+        <!-- Modal Pop Up when you Tie -- asks to replay -->
+        <div id="tieModal" class="modal later hidden">
+            <div class="modal-content">
+                <i class="fa-solid fa-rotate-right icon" style="font-size: 4em;"></i>
+            </div>
+            <div class="modal-content">
+                <h1><em>That's a TIE!</em><br>
+                    Would you like to play again?</h1>
+            </div>
+            <div>
+                <button id="tieDealBtn" class="dealButton">Deal</button>
+            </div>
+        </div>
+
+        <!-- This is th winner grid in top left corner to keep track of wins for dealer and player -->
+        <div id="winsGrid">
+            <div id="gridHeader"><h1>Overall Wins</h1></div>
+            <div class="gray"><h3>Dealer</h3></div>
+            <div class="gray"><h3>Player</h3></div>
+            <div id="dealerCount">0</div>
+            <div id="playerCount">0</div>
+        </div>
+
+
+        <!-- Div that encompasses the entire upper part of the screen that is the dealer side of the "table", includes cards and counter, slightly complicated to flip 2nd card. -->
+        <div id="dealerSide" class="container dealer">
+            <section id="dealerHand" class="hands dealer">
+                
+                <div class="column">
+                    <img id="dealerCard1" class="dealerCards cards">
+                </div>
+                <div class="column flip-container">
+                    <div id="flipDealer" class="flipper flipped">
+                        <div id="dCard-back" class="back">
+                            <img id="dealerCard2" class="dealerCards cards">
+                        </div>
+                        <div id="dCard-front" class="front">
+                            <img id="dealerCard2-1" class="dealerCards cards">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="dealerHelp" class="help">
+                <div class="count">
+                    <p id="dealerDealCount"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deck on Left of Screen that holds image of back of card -- never got time to work on animations from going to deck to dealer/player -->
+        <div id="deck" class="hands">
+            <!-- Deck of Cards -->
+            <div class="column">
+                <img src="/Card_Back.png" class="cards">
+            </div>
+        </div>
+        
+
+        <!-- Div that encompasses the entire lower part of the screen that is the player side of the "table", includes cards, buttons and counter -->
+        <div id="playerSide" class="container">
+            <section id="playerHand" class="hands player">
+                <!-- Player Hand -->
+                <div class="column">
+                    <img id="playerCard1" class="playerCards cards">
+                </div>
+                <div class="column">
+                    <img id="playerCard2" class="playerCards cards">
+                </div>
+            </section>
+            <section id="playerHelp" class="help player">
+                <div class="flex-container">
+                    <div class="count">
+                        <p id="playerDealCount"></p>
+                    </div>
+                    <div class="button-container">
+                        <button id="hitBtn" class="button actions">Hit</button>
+                        <button id="stayBtn" class="button actions">Stay</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+            
+    </body>
+
+</html>
